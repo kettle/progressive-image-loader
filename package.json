@@ -1,0 +1,69 @@
+{
+  "name": "progressive-image-loader",
+  "version": "1.0.0",
+  "description": "Progressively load images from a queue, or based on viewport proximity.",
+  "author": "Tyler Peterson <tylerjpeterson@gmail.com>",
+  "main": "index.js",
+  "bin": {
+    "progressive-image-loader-css": "bin/generate-scss.js"
+  },
+  "scripts": {
+    "coverage": "mkdir -p coverage && browserify -t [ babelify ] -p tape-istanbul/plugin test/spec/test.js | browser-run | tape-istanbul --output coverage/coverage.json && npm run report",
+    "demo:scroll": "browserify -t [ babelify ] test/examples/js/scroll-loader.js -o tmp/scroll-loader.js",
+    "demo:queue": "browserify -t [ babelify ] test/examples/js/queue-loader.js -o tmp/queue-loader.js",
+    "lint": "xo index.js bin/*.js test/spec/test.js src/*/*.js test/examples/js/*.js || true",
+    "report": "istanbul report --root coverage lcov && open coverage/lcov-report/index.html",
+    "test": "browserify -t [ babelify ] test/spec/test.js | browser-run | tap-spec",
+    "demo": "mkdir -p tmp/ && npm run demo:scroll && npm run demo:queue",
+    "docs": "jsdoc index.js src/*/index.js -p -d docs/",
+    "css": "node bin/generate-scss.js"
+  },
+  "dependencies": {
+    "events": "^3.0.0",
+    "queue": "^6.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babelify": "^10.0.0",
+    "browser-run": "^6.0.0",
+    "browserify": "^16.5.0",
+    "browserify-istanbul": "^3.0.1",
+    "ejs": "^2.7.2",
+    "inquirer": "^7.0.0",
+    "istanbul": "^0.4.5",
+    "jsdoc": "^3.6.3",
+    "node-sass": "^4.13.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0",
+    "tape-istanbul": "^1.2.0",
+    "xo": "^0.24.0"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "bugs": {
+    "url": "https://github.com/kettle/progressive-image-loader/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kettle/progressive-image-loader"
+  },
+  "homepage": "https://github.com/kettle/progressive-image-loader",
+  "contributors": [
+    ""
+  ],
+  "xo": {
+    "globals": [
+      "requestAnimationFrame",
+      "document",
+      "window",
+      "Image"
+    ]
+  },
+  "keywords": [],
+  "engines": {
+    "node": ">=8.9.4"
+  },
+  "license": "MIT"
+}

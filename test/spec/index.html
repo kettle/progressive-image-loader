@@ -1,0 +1,71 @@
+<style>
+	@charset "UTF-8";
+
+	html {-webkit-text-size-adjust: 100%;}
+	body {margin: 0; padding: 0;}
+	body * {font-family: arial, helvetica, sans-serif;}
+
+	h1 {
+		font-weight: normal;
+		text-align: center;
+		margin: 20px auto;
+	}
+
+	section {
+		height: 100vh;
+		border-bottom: 1px solid #000;
+		border-top: 1px solid #000;
+		clear: both;
+	}
+
+	.image {
+		background-size: 125px 225px;
+		margin: 20px 50px;
+		position: relative;
+		float: left;
+		width: 350px;
+		height: 133px;
+	}
+
+	.image-1 {background-image: url(https://file-examples.com/wp-content/uploads/2017/10/file_example_JPG_500kB.jpg?t=0);}
+	.image-2 {background-image: url(https://file-examples.com/wp-content/uploads/2017/10/file_example_JPG_500kB.jpg?t=1);}
+	.image-3 {background-image: url(https://file-examples.com/wp-content/uploads/2017/10/file_example_JPG_500kB.jpg?t=2);}
+	.image-4 {background-image: url(https://file-examples.com/wp-content/uploads/2017/10/file_example_JPG_500kB.jpg?t=3);}
+	.image-5 {background-image: url(https://file-examples.com/wp-content/uploads/2017/10/file_example_JPG_500kB.jpg?t=4);}
+	.image-5 {background-image: url(https://file-examples.com/wp-content/uploads/2017/10/file_example_JPG_500kB.jpg?t=5);}
+	.image-6 {background-image: url(https://file-examples.com/wp-content/uploads/2017/10/file_example_JPG_500kB.jpg?t=6);}
+	.image-7 {background-image: url(https://file-examples.com/wp-content/uploads/2017/10/file_example_JPG_500kB.jpg?t=7);}
+	.image-8 {background-image: url(https://file-examples.com/wp-content/uploads/2017/10/file_example_JPG_500kB.jpg?t=8);}
+	.image-9 {background-image: url(https://file-examples.com/wp-content/uploads/2017/10/file_example_JPG_500kB.jpg?t=9);}
+
+	html.progressive-image.js [data-progressive-image],
+	html.progressive-image.js [data-progressive-image] * {
+		background-image: none !important;
+		-webkit-mask-image: none !important;
+		mask-image: none !important;
+		opacity: 0;
+	}
+	html.progressive-image.js .progressive-image-animated,
+	html.progressive-image.js .progressive-image-animated * {
+		will-change: opacity;
+		opacity: 0;
+		-webkit-transition: opacity 1s ease-out;
+		transition: opacity 1s ease-out;
+	}
+	html.progressive-image.js .progressive-image-animated[data-progressive-image-loaded],
+	html.progressive-image.js .progressive-image-animated[data-progressive-image-loaded] *,
+	html.progressive-image.js .progressive-image-animated *[data-progressive-image-loaded],
+	html.progressive-image.js .progressive-image-animated *[data-progressive-image-loaded] * {
+		opacity: 1;
+	}
+</style>
+<figure class="image image-1" data-progressive-image></figure>
+<figure class="image image-2" data-progressive-image></figure>
+<figure class="image image-3" data-progressive-image></figure>
+<figure class="image image-4" data-progressive-image></figure>
+<figure class="image image-5" data-progressive-image></figure>
+<figure class="image image-6" data-progressive-image></figure>
+<figure class="image image-7" data-progressive-image></figure>
+<figure class="image image-8" data-progressive-image></figure>
+<figure class="image image-9" data-progressive-image></figure>
+<img src="https://file-examples.com/wp-content/uploads/2017/10/file_example_JPG_500kB.jpg?t=120" class="image image-10" data-progressive-image>

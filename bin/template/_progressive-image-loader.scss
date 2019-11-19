@@ -1,0 +1,22 @@
+html {
+	&.<%- jsSupportClass %> {
+		[<%- selectorAttribute %>],
+		[<%- selectorAttribute %>] * {
+			background-image: none !important;
+			-webkit-mask-image: none !important;
+			mask-image: none !important;
+			opacity: 0;
+		}
+
+		.<%- animateClass %>,
+		.<%- animateClass %> * {
+			opacity: 0;
+			transition: opacity 1s ease-out;
+
+			&[<%- loadedAttribute %>],
+			&[<%- loadedAttribute %>] * {
+				opacity: 1;
+			}
+		}
+	}
+}
