@@ -1,6 +1,6 @@
 {
   "name": "progressive-image-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Progressively load images from a queue, or based on viewport proximity.",
   "author": "Tyler Peterson <tylerjpeterson@gmail.com>",
   "main": "index.js",
