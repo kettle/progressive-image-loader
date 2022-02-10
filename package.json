@@ -34,7 +34,7 @@
     "inquirer": "^7.0.0",
     "istanbul": "^0.4.5",
     "jsdoc": "^3.6.3",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "tap-spec": "^5.0.0",
     "tape": "^4.11.0",
     "tape-istanbul": "^1.2.0",
